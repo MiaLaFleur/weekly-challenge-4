@@ -33,6 +33,7 @@ var ansChoice3 = document.querySelector(".a3");
 var ansChoice4 = document.querySelector(".a4");
 
 var ansFeedBack = document.createElement("h3");
+ansFeedBack.classList.add("ans-feedback")
 
 var mainDiv = document.querySelector(".main-div");
 
@@ -51,7 +52,7 @@ var startScreen = function() {
 }
 
  var question1 = function() {
-     mainDiv.style.display = "initial";
+     mainDiv.style.display = "flex";
      startScreenDiv.style.display = "none";
 
      questionTitle.textContent = q1.question;
