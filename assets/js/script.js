@@ -45,11 +45,22 @@ var startScreen = function() {
     
     mainDiv.style.display = "none";
     startScreenDiv.style.visibility = "visible";
+    HighScoreScreen.style.display = "none";
 
     var startButton = document.querySelector(".start-btn");
     startButton.addEventListener("click", question1);
 
 }
+
+var count = 75;
+var interval = setInterval(function(){
+  document.getElementById('count').innerHTML=count;
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    document.getElementById('count').innerHTML='Done';
+  }
+}, 1000);
 
  var question1 = function() {
      mainDiv.style.display = "flex";
@@ -134,6 +145,22 @@ var question4 = function() {
         }
     });
 };
+
+var setScoreScreen = function() {
+    var enterInitials = document.createElement("form");
+}
+
+var HighScoreScreen = document.querySelector(".high-score-screen");
+
+var viewScoresBtn = document.querySelector(".highscores-btn");
+
+var HighScores = function() {
+    mainDiv.style.display = "none";
+    startScreenDiv.style.display = "none";
+    HighScoreScreen.style.display = "flex";
+
+
+}
 
 
 startScreen();
