@@ -38,7 +38,22 @@ var mainDiv = document.querySelector(".main-div");
 
 mainDiv.appendChild(ansFeedBack);
 
+var startScreenDiv = document.querySelector(".start-screen");
+
+var startScreen = function() {
+    
+    mainDiv.style.visibility = "hidden";
+    startScreenDiv.style.visibility = "visible";
+
+    var startButton = document.querySelector(".start-btn");
+    startButton.addEventListener("click", question1);
+
+}
+
  var question1 = function() {
+     mainDiv.style.visibility = "visible";
+     startScreenDiv.style.visibility = "hidden";
+
      questionTitle.textContent = q1.question;
 
     ansChoice1.textContent = q1.answerChoices[0];
@@ -120,5 +135,4 @@ var question4 = function() {
 };
 
 
-
-question1();
+startScreen();
