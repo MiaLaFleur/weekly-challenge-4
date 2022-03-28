@@ -20,7 +20,7 @@ var q3 = {
 var q4 = {
     question: "String values must be enclosed within ____ when being assigned to variables",
     answerChoices: ["commas", "curly brackets", "quotes", "parentheses"],
-    correctAnswer: 0
+    correctAnswer: 2
 };
 
 var questionTitle = document.querySelector(".question");
@@ -32,7 +32,11 @@ var ansChoice2 = document.querySelector(".a2");
 var ansChoice3 = document.querySelector(".a3");
 var ansChoice4 = document.querySelector(".a4");
 
+var ansFeedBack = document.createElement("h3");
+
 var mainDiv = document.querySelector(".main-div");
+
+mainDiv.appendChild(ansFeedBack);
 
  var question1 = function() {
      questionTitle.textContent = q1.question;
@@ -44,15 +48,10 @@ var mainDiv = document.querySelector(".main-div");
 
     answerList.addEventListener("click", function(event) {
       if (!event.target.matches(".a3")) {
-           var wrong = document.createElement("h3");
-            wrong.textContent = "Wrong";
-            mainDiv.appendChild(wrong);
-
+           ansFeedBack.textContent = "Wrong";
     }
     else {
-        var right = document.createElement("h3");
-        right.textContent = "Right!";
-        mainDiv.appendChild(right);
+        ansFeedBack.textContent = "Right";
     };
     
     question2();
@@ -61,6 +60,7 @@ var mainDiv = document.querySelector(".main-div");
 };
 
 var question2 = function() {
+
     questionTitle.textContent = q2.question;
 
     ansChoice1.textContent = q2.answerChoices[0];
@@ -70,14 +70,10 @@ var question2 = function() {
 
     answerList.addEventListener("click", function(event) {
         if (!event.target.matches(".a2")) {
-            var wrong = document.createElement("h3");
-            wrong.textContent = "Wrong";
-            mainDiv.appendChild(wrong);
+            ansFeedBack.textContent = "Wrong";
         }
         else {
-            var right = document.createElement("h3");
-            right.textContent = "Right!";
-            mainDiv.appendChild(right);
+            ansFeedBack.textContent = "Right";
         }
 
         question3();
@@ -94,17 +90,35 @@ var question3 = function() {
 
     answerList.addEventListener("click", function(event) {
         if (!event.target.matches(".a4")) {
-            var wrong = document.createElement("h3");
-            wrong.textContent = "Wrong";
-            mainDiv.appendChild(wrong);
+            ansFeedBack.textContent = "Wrong";
         }
         else {
-            var right = document.createElement("h3");
-            right.textContent = "Right!";
-            mainDiv.appendChild(right);
-        }
-    })
+            ansFeedBack.textContent = "Right";
+        } 
 
-}
+        question4();
+    });
+
+};
+
+var question4 = function() {
+    questionTitle.textContent = q4.question;
+
+    ansChoice1.textContent = q4.answerChoices[0];
+    ansChoice2.textContent = q4.answerChoices[1];
+    ansChoice3.textContent = q4.answerChoices[2];
+    ansChoice4.textContent = q4.answerChoices[3];
+
+    answerList.addEventListener("click", function(event) {
+        if (!event.target.matches(".a3")) {
+            ansFeedBack.textContent = "Wrong";
+        }
+        else {
+            ansFeedBack.textContent = "Right";
+        }
+    });
+};
+
+
 
 question1();
