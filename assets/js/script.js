@@ -42,6 +42,7 @@ mainDiv.appendChild(ansFeedBack);
 var startScreenDiv = document.querySelector(".start-screen");
 
 var count = 75;
+var interval;
 
 var startScreen = function() {
     
@@ -52,7 +53,7 @@ var startScreen = function() {
     var startButton = document.querySelector(".start-btn");
     startButton.addEventListener("click", question1);
     startButton.addEventListener("click", () => {
-        var interval = setInterval(function(){
+        interval = setInterval(function(){
     document.getElementById('count').innerHTML=count;
     count--;
     if (count === 0){
@@ -140,9 +141,13 @@ var question4 = function() {
     answerList.addEventListener("click", function(event) {
         if (!event.target.matches(".a3")) {
             ansFeedBack.textContent = "Wrong";
+            clearInterval(interval);
+            console.log(count);
         }
         else {
             ansFeedBack.textContent = "Right";
+            clearInterval(interval);
+            console.log(count);
         }
     });
 };
