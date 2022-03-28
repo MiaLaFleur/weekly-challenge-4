@@ -42,7 +42,7 @@ var startScreenDiv = document.querySelector(".start-screen");
 
 var startScreen = function() {
     
-    mainDiv.style.visibility = "hidden";
+    mainDiv.style.display = "none";
     startScreenDiv.style.visibility = "visible";
 
     var startButton = document.querySelector(".start-btn");
@@ -51,8 +51,8 @@ var startScreen = function() {
 }
 
  var question1 = function() {
-     mainDiv.style.visibility = "visible";
-     startScreenDiv.style.visibility = "hidden";
+     mainDiv.style.display = "initial";
+     startScreenDiv.style.display = "none";
 
      questionTitle.textContent = q1.question;
 
